@@ -17,9 +17,6 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tmhedberg/matchit'
 Plugin 'tomasr/molokai'
 
 if iCanHazVundle == 0
@@ -31,7 +28,6 @@ filetype plugin on
 filetype indent on
 set incsearch
 set ignorecase
-set noshowmode
 set ruler
 set number
 set cursorline
@@ -43,22 +39,16 @@ set termencoding=utf8
 set nobomb
 set fileformat=unix
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 syntax enable
 set t_Co=256
 colorscheme molokai
 let g:molokai_original=1
-
 nmap <F1> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims=1
-
 nmap <silent> <F2> :tabp <CR>
 nmap <silent> <F3> :tabn <CR>
 nnoremap <F4> :set nonumber!<CR>:set foldcolumn=0<CR>
-
