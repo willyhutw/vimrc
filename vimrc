@@ -21,6 +21,7 @@ Plugin 'tomasr/molokai'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'fatih/vim-go'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -46,6 +47,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
 syntax enable
 set t_Co=256
 colorscheme molokai
@@ -57,3 +59,12 @@ nmap <silent> <F2> :tabp <CR>
 nmap <silent> <F3> :tabn <CR>
 nnoremap <F4> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F5> gg=G''<CR>
+
+"golang
+set autowrite
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
