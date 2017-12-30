@@ -22,6 +22,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
