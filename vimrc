@@ -44,11 +44,10 @@ set termencoding=utf8
 set nobomb
 set fileformat=unix
 set expandtab
-set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+autocmd FileType go setlocal shiftwidth=4 softtabstop=4
 syntax enable
 set t_Co=256
 colorscheme molokai
