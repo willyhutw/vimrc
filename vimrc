@@ -15,12 +15,17 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
+Plugin 'tomasr/molokai'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'tomasr/molokai'
-Plugin 'sheerun/vim-polyglot'
+Plugin 'kien/ctrlp.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
@@ -31,36 +36,35 @@ endif
 
 filetype plugin on
 filetype indent on
-set incsearch
-set ignorecase
+syntax enable
+set t_Co=256
+colorscheme molokai
+set showmatch
 set ruler
 set number
 set cursorline
+set incsearch
+set ignorecase
 set backspace=2
-set showmatch
 set encoding=utf8
 set fileencoding=utf8
 set termencoding=utf8
 set nobomb
 set fileformat=unix
-set expandtab
 set softtabstop=2
 set shiftwidth=2
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-autocmd FileType go setlocal shiftwidth=4 softtabstop=4
-syntax enable
-set t_Co=256
-colorscheme molokai
-let g:molokai_original=1
-nmap <F1> :NERDTreeToggle<CR>
-let g:NERDSpaceDelims=1
-let g:NERDTreeIgnore = ['node_modules']
-nmap <silent> <F2> :tabp <CR>
-nmap <silent> <F3> :tabn <CR>
-nnoremap <F4> :set nonumber!<CR>:set foldcolumn=0<CR>
-nnoremap <F5> gg=G''<CR>
+set expandtab
+set clipboard=unnamed
 
-"golang
+let g:molokai_original=1
+
+let g:NERDSpaceDelims=1
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -68,9 +72,19 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = 'goimports'
 
+nmap <F1> :NERDTreeToggle<CR>
+nmap <silent> <F2> :tabp <CR>
+nmap <silent> <F3> :tabn <CR>
+nmap <F4> :set nonumber!<CR>:set foldcolumn=0<CR>
+nmap <F8> :TagbarToggle<CR>
+nmap <F12> gg=G''<CR>
+
 map <C-n> :cnext<CR>
 
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage)
+autocmd FileType go setlocal shiftwidth=4 softtabstop=4
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+
