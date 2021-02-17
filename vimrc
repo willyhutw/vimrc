@@ -25,9 +25,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
-Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -76,7 +74,6 @@ nmap <F1> :NERDTreeToggle<CR>
 nmap <silent> <F2> :tabp <CR>
 nmap <silent> <F3> :tabn <CR>
 nmap <F4> :set nonumber!<CR>:set foldcolumn=0<CR>
-nmap <F8> :TagbarToggle<CR>
 nmap <F12> gg=G''<CR>
 
 map <C-n> :cnext<CR>
