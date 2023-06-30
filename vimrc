@@ -34,8 +34,6 @@ set clipboard=unnamed
 set cursorline
 set encoding=utf8
 set expandtab
-set fileencoding=utf8
-set fileformat=unix
 set ignorecase
 set incsearch
 set nobomb
